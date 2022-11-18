@@ -17,7 +17,7 @@
     "_id": "8074663e-999a-4907-bf68-a044dbe534df",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/products",
+    "name": "LISTA TODOS PRODUTOS",
     "url": "http://localhost:3000/products",
     "method": "GET",
     "sortNum": 0,
