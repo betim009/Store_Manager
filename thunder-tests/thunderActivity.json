@@ -18,27 +18,132 @@
     "colId": "history",
     "containerId": "",
     "name": "LISTA TODOS PRODUTOS",
-    "url": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products/",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-11-17T22:08:43.452Z",
-    "modified": "2022-11-17T22:08:43.452Z",
+    "modified": "2022-11-18T22:17:47.234Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"alb\"\n}\n",
+      "form": []
+    },
     "tests": []
   },
   {
     "_id": "a7780f69-8b51-4fe5-8424-d2cb2646a0d4",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/products/1",
-    "url": "http://localhost:3000/products/1",
+    "name": "cadastra produto",
+    "url": "http://localhost:3000/products/5",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-11-17T22:09:04.945Z",
-    "modified": "2022-11-17T22:09:04.945Z",
+    "modified": "2022-11-18T22:19:37.621Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Camila\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "1dad2711-a47d-4668-a930-53db7e84b67a",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-11-21T18:54:39.211Z",
+    "modified": "2022-11-21T19:05:22.754Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "bec2d53f-8448-4825-994e-56f55360a03f",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/1",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-11-21T21:08:24.909Z",
+    "modified": "2022-11-21T21:08:30.846Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batmn\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "301f6d40-9e8d-47ee-a7e7-0a70482764eb",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/",
+    "url": "http://localhost:3000/products/",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-21T21:08:34.980Z",
+    "modified": "2022-11-21T21:08:34.980Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batmn\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "42e0c9a2-0019-4cfb-8df9-de4d5f7d7911",
+    "colId": "history",
+    "containerId": "",
+    "name": "ALTERANDO PRODUTO",
+    "url": "http://localhost:3000/products/2",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2022-11-21T21:08:55.396Z",
+    "modified": "2022-11-21T21:17:08.639Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"CAVALO DE TROUXA\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "399c0f0d-b092-47b1-bcef-deae36ff4100",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products/2",
+    "url": "http://localhost:3000/products/2",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-11-21T21:09:01.812Z",
+    "modified": "2022-11-21T21:09:01.812Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"Martelo do Batmn\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

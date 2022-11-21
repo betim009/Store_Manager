@@ -1,5 +1,3 @@
-// const camelize = require('camelize');
-// const snakeize = require('snakeize');
 const connection = require('./database/connection');
 
 const findAll = async () => {
@@ -26,8 +24,17 @@ const insert = async (name) => {
   return insertId;
 };
 
+const update = async (id, name) => {
+  const result = connection.execute(
+    'UPDATE products SET name = ? WHERE id = ?',
+    [name, id],
+  );
+  return result;
+};
+
 module.exports = {
   findAll,
   findById,
   insert,
+  update,
 };
