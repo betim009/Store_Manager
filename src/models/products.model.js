@@ -32,9 +32,18 @@ const update = async (id, name) => {
   return result;
 };
 
+const deleteById = async (id) => {
+  const result = connection.execute(
+    'DELETE FROM StoreManager.products WHERE id = ?',
+    [id],
+  );
+  return result;
+};
+
 module.exports = {
   findAll,
   findById,
   insert,
   update,
+  deleteById,
 };
