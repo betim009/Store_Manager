@@ -27,7 +27,7 @@ const productMock = [
 ]
 
 const newProduct = {
-  name: "One Piece",
+  "name": "One Piece",
 }
 
 const productTest = {

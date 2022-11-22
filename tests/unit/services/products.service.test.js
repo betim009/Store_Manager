@@ -58,7 +58,7 @@ describe('Camada Service', function () {
 
     it('com erro', async function () {
       const response = await productsService.findById(20);
-      console.log(response);
+
       expect(response).to.deep.equal({ type: 'PRODUCT_NOT_FOUND', message: 'Product not found' });
     });
   });
