@@ -4,7 +4,7 @@ const { expect } = require('chai');
 const { productsModel } = require('../../../src/models');
 
 const { productsService } = require('../../../src/services');
-const { productsMock, productMock } = require('./mocks/products.service.mock');
+const { productsMock, productMock, errorMock } = require('./mocks/products.service.mock');
 
 const connection = require('../../../src/models/database/connection');
 
@@ -46,4 +46,21 @@ describe('Camada Service', function () {
       expect(response).to.be.deep.equal(productMock)
     });
   });
+
+  describe('Buscando por id', function () {
+    beforeEach(function () {
+      sinon.stub(productsModel, 'findById').resolves(productsMock[20]);
+    });
+
+    afterEach(function () {
+      sinon.restore();
+    });
+
+    it('com erro', async function () {
+      const response = await productsService.findById(20);
+      console.log(response);
+      expect(response).to.deep.equal({ type: 'PRODUCT_NOT_FOUND', message: 'Product not found' });
+    });
+  });
+
 });

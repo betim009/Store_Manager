@@ -9,11 +9,12 @@ chai.use(sinonChai);
 const productsService = require('../../../src/services/products.service');
 const { productsController }  = require('../../../src/controllers');
 
-const { productsMock } = require('./mocks/products.controller.mock');
+const { productsMock, productMock, newProduct, productTest } = require('./mocks/products.controller.mock');
+
 
 describe('Controller', function () {
-  describe('listando prodcuts', function () {
-    it('', async function () {
+  describe('Listando produtos', function () {
+    it('Listando todos os produtos', async function () {
       const res = {};
       const req = {};
       const productsist = [productsMock];
@@ -30,4 +31,40 @@ describe('Controller', function () {
       expect(res.json).to.have.been.calledWith(productsist);
     });
   });
+
+  it('Buscando produto por id', async function () {
+    const res = {};
+    const req = { params: { id: 1 }, };
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    const productsist = [productMock];
+
+    sinon
+      .stub(productsService, 'findById')
+      .resolves({ type: null, message: productsist })
+
+    await productsController.getProducts(req, res);
+
+    expect(res.status).to.have.been.calledWith(200);
+    expect(res.json).to.have.been.calledWith(productsist);
+  });
+
+  it('Criando um novo produto', async function () {
+    const res = {};
+    const req = { body: newProduct };
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+
+    sinon
+      .stub(productsService, 'createProduct')
+      .resolves({ type: null, message: newProduct });
+
+    await productsController.createProduct(req, res);
+    expect(res.status).to.have.been.calledWith(201);
+    expect(res.json).to.have.been.calledWith(newProduct);
+  });
+
+  afterEach(sinon.restore);
 });
