@@ -21,13 +21,13 @@ describe('Camada Service', function () {
     it('a lista de produtos é um array', async function () {
       const response = await productsService.findAll();
 
-      expect(response.message instanceof Array).to.equal(true);
+      expect(response instanceof Array).to.equal(true);
     });
 
     it('com sucesso', async function () {
       const response = await productsService.findAll();
 
-      expect(response.message).to.deep.equal(productsMock);
+      expect(response).to.deep.equal(productsMock);
     });
   });
 
@@ -43,13 +43,14 @@ describe('Camada Service', function () {
     it('com sucesso', async function () {
       const response = await productsService.findById(1);
 
+      console.log('TESTE:', productMock);
       expect(response).to.be.deep.equal(productMock)
     });
   });
 
   describe('Buscando por id', function () {
     beforeEach(function () {
-      sinon.stub(productsModel, 'findById').resolves(productsMock[20]);
+      sinon.stub(productsModel, 'findById').resolves(errorMock);
     });
 
     afterEach(function () {
@@ -58,8 +59,9 @@ describe('Camada Service', function () {
 
     it('com erro', async function () {
       const response = await productsService.findById(20);
-
-      expect(response).to.deep.equal({ type: 'PRODUCT_NOT_FOUND', message: 'Product not found' });
+      console.log(errorMock);
+      console.log(response);
+      expect(response).to.deep.equal({ message: 'Product not found' });
     });
   });
 

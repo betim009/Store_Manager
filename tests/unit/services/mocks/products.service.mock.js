@@ -13,14 +13,9 @@ const productsMock = [
   }
 ];
 
-const productMock = { type: null, message: { id: 1, name: 'Martelo de Thor' } }
+const productMock = { id: 1, name: 'Martelo de Thor' };
 
-const errorMock = [
-  {
-    type: 'PRODUCT_NOT_FOUND',
-    message: 'Product not found',
-  }
-]
+const errorMock = { "message": "Product not found" };
 
 module.exports = {
   productsMock,

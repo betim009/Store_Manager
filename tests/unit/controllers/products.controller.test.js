@@ -23,7 +23,7 @@ describe('Controller', function () {
       res.json = sinon.stub().returns();
       sinon
         .stub(productsService, 'findAll')
-        .resolves({ type: null, message: productsist });
+        .resolves(productsist);
 
       await productsController.listProducts(req, res);
 
@@ -42,7 +42,7 @@ describe('Controller', function () {
 
     sinon
       .stub(productsService, 'findById')
-      .resolves({ type: null, message: productsist })
+      .resolves(productsist)
 
     await productsController.getProducts(req, res);
 
@@ -59,7 +59,7 @@ describe('Controller', function () {
 
     sinon
       .stub(productsService, 'createProduct')
-      .resolves({ type: null, message: newProduct });
+      .resolves(newProduct);
 
     await productsController.createProduct(req, res);
     expect(res.status).to.have.been.calledWith(201);
