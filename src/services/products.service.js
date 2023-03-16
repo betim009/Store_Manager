@@ -1,48 +1,35 @@
 const { productsModel } = require('../models');
-const { validateId, validateProducts } = require('./validations/validationsInputValues');
 
 const findAll = async () => {
   const products = await productsModel.findAll();
-  return { type: null, message: products };
+  return products;
 };
 
 const findById = async (productsId) => {
-  const error = validateId(productsId);
-
-  if (error.type) return error;
-
-  const products = await productsModel.findById(productsId);
-  if (products) return { type: null, message: products };
-  return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
+  const product = await productsModel.findById(productsId);
+  return product;
 };
 
 const createProduct = async (name) => {
-  const error = validateProducts(name);
-  if (error.type) return error;
+  const CreateProductByName = await productsModel.insert(name);
+  const newProduct = await productsModel.findById(CreateProductByName);
 
-  const newProductId = await productsModel.insert(name);
-  const newProduct = await productsModel.findById(newProductId);
-
-  return { type: null, message: newProduct };
+  return newProduct;
 };
 
 const updateProduct = async (id, name) => {
-  const productExist = await productsModel.findById(id);
-  if (!productExist) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
-
-  await productsModel.update(id, name);
-  return { type: null, message: { id, name } };
+  const updtProduct = await productsModel.update(id, name);
+  const product = await productsModel.findById(id);
+  if (updtProduct) return product;
 };
 
 const deleteProduct = async (id) => {
-  const error = validateId(id);
-  if (error.type) return error;
-
-  const products = await productsModel.findById(id);
-  if (!products) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
-
+  const existingProduct = await productsModel.findById(id);
+  if (!existingProduct) {
+    return null;
+  }
   await productsModel.deleteById(id);
-  return { type: null, message: 'delet' };
+  return existingProduct;
 };
 
 module.exports = {

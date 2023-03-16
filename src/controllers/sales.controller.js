@@ -12,7 +12,20 @@ const getSales = async (req, res) => {
   return res.status(200).json(message);
 };
 
+const insertProductSale = async (req, res) => {
+  const sales = req.body;
+
+  const { status, message } = await salesService.insertProductSale(sales);
+
+  if (status === 201) {
+    return res.status(status).json({ id: message, itemsSold: sales });
+  }
+
+  return res.status(status).json({ message });
+};
+
 module.exports = {
   listSales,
   getSales,
+  insertProductSale,
 };

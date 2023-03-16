@@ -102,7 +102,7 @@
     "_id": "97ff37b3-70d5-4c7b-81b9-4c47eb95dafb",
     "colId": "history",
     "containerId": "",
-    "name": "http://localhost:3000/products/50",
+    "name": "LISTA SALE POR id",
     "url": "http://localhost:3000/sales/5",
     "method": "GET",
     "sortNum": 0,
