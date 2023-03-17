@@ -32,11 +32,11 @@
     "colId": "35b1f615-2df1-40f6-a5e9-f90117c49659",
     "containerId": "",
     "name": "Get Product By Id",
-    "url": "http://localhost:3000/products/100",
+    "url": "http://localhost:3000/products/1",
     "method": "GET",
     "sortNum": 40000,
     "created": "2023-03-14T02:42:50.513Z",
-    "modified": "2023-03-16T20:49:18.948Z",
+    "modified": "2023-03-17T01:23:09.787Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -110,6 +110,20 @@
       "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 1\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 5\n  }\n]",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "d55fd544-3214-4431-89d0-5f2bbda66301",
+    "colId": "35b1f615-2df1-40f6-a5e9-f90117c49659",
+    "containerId": "",
+    "name": "Get Sales Id",
+    "url": "http://localhost:3000/sales/1",
+    "method": "GET",
+    "sortNum": 90000,
+    "created": "2023-03-17T01:10:45.856Z",
+    "modified": "2023-03-17T01:11:00.072Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

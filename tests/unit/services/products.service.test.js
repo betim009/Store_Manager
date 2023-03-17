@@ -43,7 +43,7 @@ describe('Camada Service', function () {
     it('com sucesso', async function () {
       const response = await productsService.findById(1);
 
-      console.log('TESTE:', productMock);
+      // console.log('TESTE:', productMock);
       expect(response).to.be.deep.equal(productMock)
     });
   });
@@ -59,8 +59,8 @@ describe('Camada Service', function () {
 
     it('com erro', async function () {
       const response = await productsService.findById(20);
-      console.log(errorMock);
-      console.log(response);
+      // console.log(errorMock);
+      // console.log(response);
       expect(response).to.deep.equal({ message: 'Product not found' });
     });
   });
